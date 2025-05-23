@@ -53,4 +53,33 @@ const sortArray = (arr1,arr2) => {
     }
 }
 
+// kontrollib kas kahest arrayst ühte on olemas teine ja tagastab need väärtused 
+const controlExisting = (arr1,arr2) => {
+    let values = [];
+    if(arr1.length !== arr2.length) return false;
+    let sorted1 =  [...arr1].sort();
+    let sorted2 = [...arr2].sort();
+    
+    for (let i = 0; i < sorted1.length; i++) {
+        if(sorted1[i] !== sorted2[i]) return false;
+    }
+    return true;
+    
+}
+
+const controlExisting2 = (arr1,arr2) => {
+    if (arr1.length !== arr2.length) return {areEqual: false, commonValues: []};
+
+    let sorted1 = [...arr1].sort();
+    let sorted2 = [...arr2].sort();
+    let commonValues = [];
+
+    for (let i = 0; i < sorted1.length; i++) {
+        if (sorted1[i] !== sorted2[i]) return {areEqual: false, commonValues: []};
+        commonValues.push(sorted1[i]);
+    }
+    return {areEqual: true, commonValues: commonValues};
+}
+
 //console.log(sortArray(array2,array2))
+console.log(controlExisting2(array1,array3))
