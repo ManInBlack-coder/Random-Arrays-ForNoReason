@@ -67,6 +67,7 @@ const controlExisting = (arr1,arr2) => {
     
 }
 
+// kontrollib kas kahest arrayst ühte on olemas teine ja tagastab need väärtused
 const controlExisting2 = (arr1,arr2) => {
     if (arr1.length !== arr2.length) return {areEqual: false, commonValues: []};
 
@@ -81,5 +82,19 @@ const controlExisting2 = (arr1,arr2) => {
     return {areEqual: true, commonValues: commonValues};
 }
 
-//console.log(sortArray(array2,array2))
-console.log(controlExisting2(array1,array3))
+
+//Elementide paarid, mille summa on võrdne kindla väärtusega
+
+const pairSum = (arr1, arr2, target) => {
+    let pairs = [];
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] + arr2[j] === target) {
+                pairs.push([arr1[i], arr2[j]]);
+            }
+        }
+    }
+    return pairs;
+}
+
+console.log(pairSum(array1,array2,5));
