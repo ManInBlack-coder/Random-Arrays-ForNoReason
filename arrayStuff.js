@@ -97,4 +97,16 @@ const pairSum = (arr1, arr2, target) => {
     return pairs;
 }
 
-console.log(pairSum(array1,array2,5));
+const sameValueAtSameIndex = (arr1,arr2) => {
+    let result = []; 
+    let Len = Math.min(arr1.length, arr2.length);
+
+    for (let i = 0; i < Len; i++){
+        if (arr1[i] === arr2[i]) {
+            result.push(arr1[i]);
+        }
+    }
+    return result; 
+}
+
+console.log(sameValueAtSameIndex(array2,array3));
