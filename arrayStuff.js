@@ -1,7 +1,7 @@
 let array1 = [1, 2, 2, 3, 4, 4, 5]
 
 let array2 = [1, 2, 2, 3, 4, 4, 5]
-let array3 = [124,33,3,4,5]
+let array3 = [2, 3, 3, 4, 5, 4]
 // const arrFunc = (array) => {
 //   let sum = 0 
 //   for (let i = 0; i < array.length; i++) {
@@ -109,4 +109,31 @@ const sameValueAtSameIndex = (arr1,arr2) => {
     return result; 
 }
 
-console.log(sameValueAtSameIndex(array2,array3));
+//console.log(sameValueAtSameIndex(array2,array3));
+
+
+// quicksort 
+
+const quickSort = (arr) => {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    let pivot = arr[arr.length - 1]; // Eelviimane element
+    let left = []; 
+    let right = [];
+
+    for (let i = 0; i < pivot; i++) { // pivot on eelviimane element
+        if (arr[i] < pivot) { // kui array indexi järgi võetud element on pivotist väiksem, siis lisame vasakule
+            left.push(arr[i])
+        } else { // kui array indexi järgi võetud element on pivotist suurem, siis lisame paremale
+            right.push(arr[i])
+        }
+    }
+
+    return [...quickSort(left), pivot, ...quickSort(right)]; // rekursiooniga jätkame sortimist vasakul ja paremal pool
+
+}
+
+console.log(quickSort(array2));
+
