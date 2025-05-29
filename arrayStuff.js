@@ -110,3 +110,4 @@ const sameValueAtSameIndex = (arr1,arr2) => {
 }
 
 console.log(sameValueAtSameIndex(array1,array2));
+//some stuff 
