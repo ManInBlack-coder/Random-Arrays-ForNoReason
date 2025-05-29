@@ -109,6 +109,7 @@ const sameValueAtSameIndex = (arr1,arr2) => {
     return result; 
 }
 
+
 //console.log(sameValueAtSameIndex(array2,array3));
 
 
@@ -134,6 +135,4 @@ const quickSort = (arr) => {
     return [...quickSort(left), pivot, ...quickSort(right)]; // rekursiooniga jätkame sortimist vasakul ja paremal pool
 
 }
-
-console.log(quickSort(array2));
 
