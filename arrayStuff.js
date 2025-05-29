@@ -110,9 +110,6 @@ const sameValueAtSameIndex = (arr1,arr2) => {
 }
 
 
-//console.log(sameValueAtSameIndex(array2,array3));
-
-
 // quicksort 
 
 const quickSort = (arr) => {
@@ -135,4 +132,6 @@ const quickSort = (arr) => {
     return [...quickSort(left), pivot, ...quickSort(right)]; // rekursiooniga jätkame sortimist vasakul ja paremal pool
 
 }
+
+// Hashmap näide 
 
