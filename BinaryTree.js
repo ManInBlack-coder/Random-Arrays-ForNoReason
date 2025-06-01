@@ -102,7 +102,6 @@ class BinarySearchTree {
     // Kasulik puu kopeerimiseks või selle struktuuri salvestamiseks 
     preOrderTraversal() {
         const result = []; 
-
         const traverse = (node) => {
             result.push(node.value); //lisab praeguse sõlme tulemuse result array'sse 
             if (node.left) traverse(node.left); // käib vasakule
@@ -110,7 +109,6 @@ class BinarySearchTree {
         }
         traverse(this.root);
         return(result);
-
     }
 
 

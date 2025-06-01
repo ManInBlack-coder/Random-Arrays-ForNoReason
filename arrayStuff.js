@@ -135,3 +135,18 @@ const quickSort = (arr) => {
 
 // Hashmap näide 
 
+//Leetcode problem (Palindrome Number)
+
+xy = 121 
+
+const isPalindrome = (x) => {
+    let element = [];
+    for (let i = 0; i < element.slice.length ; i++) {
+        if (element[i] === i) {
+            element.push()
+        }
+    }
+    return element; 
+};
+
+isPalindrome(xy)
