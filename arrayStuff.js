@@ -136,17 +136,24 @@ const quickSort = (arr) => {
 // Hashmap näide 
 
 //Leetcode problem (Palindrome Number)
+xy = 221
 
-xy = 121 
+const Reversed = (num) => {
+
+    const numStr = num.toString();
+    const revStr = numStr.split('').reverse().join('');
+    let revNum = parseInt(revStr,10);
+    return revNum;
+}
 
 const isPalindrome = (x) => {
-    let element = [];
-    for (let i = 0; i < element.slice.length ; i++) {
-        if (element[i] === i) {
-            element.push()
-        }
+    const reversedAbtsis = Reversed(x)
+    if (x === reversedAbtsis) {
+        return true;
+    } else {
+        return false;
     }
-    return element; 
 };
 
-isPalindrome(xy)
+console.log(isPalindrome(xy))
+
