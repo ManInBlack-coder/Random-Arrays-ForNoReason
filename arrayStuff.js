@@ -188,3 +188,43 @@ return result;
 }
 
 console.log(ArabToRom(20239))
+
+
+
+// Merging more than two arrays into one sorted array from hashmap
+ArrayMap = [
+    {arr: 1, list: [1,2,5,1]},
+    {arr: 2, list: [3,5,7,1,1]},
+    {arr: 3, list: [2,2,1,8,4,6,3,4,5]}]
+
+
+const mergeLists = (lists) => {
+       let merged = [];
+       
+      //ühendame ära listid 
+      for (const item of lists) {
+          merged = merged.concat(item.list);
+      }
+      //sordime ära kasvavalt 
+      merged.sort((a, b) => a - b);
+      return merged
+   }
+
+console.log(mergeLists(ArrayMap))
+
+//leetcode problem 
+//Merging more than two arrays into one sorted array from typical array of arrays
+listers = [[1,4,5],[1,3,4],[2,6]]
+   
+ 
+const mergeLists2 = (lists) => {
+       let merged = [];
+     
+       for(let i = 0; i < lists.length; i++) {
+        merged.push(...lists[i])
+       }
+       return merged.sort(); 
+    }
+   
+
+console.log(mergeLists(listers))
