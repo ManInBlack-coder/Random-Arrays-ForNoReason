@@ -136,13 +136,14 @@ const quickSort = (arr) => {
 // Hashmap näide 
 
 //Leetcode problem (Palindrome Number)
+
 xy = 221
 
 const Reversed = (num) => {
 
     const numStr = num.toString();
     const revStr = numStr.split('').reverse().join('');
-    let revNum = parseInt(revStr,10);
+    let revNum = parseInt(revStr,1);
     return revNum;
 }
 
@@ -157,3 +158,33 @@ const isPalindrome = (x) => {
 
 console.log(isPalindrome(xy))
 
+// Int to roman leetcode problem with hashmap usage
+const ArabToRom = (num) => {
+    const romanNums = [
+  { val: 1000, sym: 'M' },
+  { val: 900,  sym: 'CM' },
+  { val: 500,  sym: 'D' },
+  { val: 400,  sym: 'CD' },
+  { val: 100,  sym: 'C' },
+  { val: 90,   sym: 'XC' },
+  { val: 50,   sym: 'L' },
+  { val: 40,   sym: 'XL' },
+  { val: 10,   sym: 'X' },
+  { val: 9,    sym: 'IX' },
+  { val: 5,    sym: 'V' },
+  { val: 4,    sym: 'IV' },
+  { val: 1,    sym: 'I' },
+];
+
+let result = '';
+
+for(const {val,sym} of romanNums) {
+    while(num >= val) {
+        result += sym;
+        num -= val;
+    }
+}
+return result;
+}
+
+console.log(ArabToRom(20239))
