@@ -137,9 +137,97 @@ const quickSort = (arr) => {
 
 //Leetcode problem (Palindrome Number)
 
-xy = 121 
+xy = 221
+
+const Reversed = (num) => {
+
+    const numStr = num.toString();
+    const revStr = numStr.split('').reverse().join('');
+    let revNum = parseInt(revStr,1);
+    return revNum;
+}
 
 const isPalindrome = (x) => {
+    const reversedAbtsis = Reversed(x)
+    if (x === reversedAbtsis) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(isPalindrome(xy))
+
+// Int to roman leetcode problem with hashmap usage
+const ArabToRom = (num) => {
+    const romanNums = [
+  { val: 1000, sym: 'M' },
+  { val: 900,  sym: 'CM' },
+  { val: 500,  sym: 'D' },
+  { val: 400,  sym: 'CD' },
+  { val: 100,  sym: 'C' },
+  { val: 90,   sym: 'XC' },
+  { val: 50,   sym: 'L' },
+  { val: 40,   sym: 'XL' },
+  { val: 10,   sym: 'X' },
+  { val: 9,    sym: 'IX' },
+  { val: 5,    sym: 'V' },
+  { val: 4,    sym: 'IV' },
+  { val: 1,    sym: 'I' },
+];
+
+let result = '';
+
+for(const {val,sym} of romanNums) {
+    while(num >= val) {
+        result += sym;
+        num -= val;
+    }
+}
+return result;
+}
+
+console.log(ArabToRom(20239))
+
+
+
+// Merging more than two arrays into one sorted array from hashmap
+ArrayMap = [
+    {arr: 1, list: [1,2,5,1]},
+    {arr: 2, list: [3,5,7,1,1]},
+    {arr: 3, list: [2,2,1,8,4,6,3,4,5]}]
+
+
+const mergeLists = (lists) => {
+       let merged = [];
+       
+      //ühendame ära listid 
+      for (const item of lists) {
+          merged = merged.concat(item.list);
+      }
+      //sordime ära kasvavalt 
+      merged.sort((a, b) => a - b);
+      return merged
+   }
+
+console.log(mergeLists(ArrayMap))
+
+//leetcode problem 
+//Merging more than two arrays into one sorted array from typical array of arrays
+listers = [[1,4,5],[1,3,4],[2,6]]
+   
+ 
+const mergeLists2 = (lists) => {
+       let merged = [];
+     
+       for(let i = 0; i < lists.length; i++) {
+        merged.push(...lists[i])
+       }
+       return merged.sort(); 
+    }
+   
+
+console.log(mergeLists(listers))
     let element = [];
     for (let i = 0; i < element.slice.length ; i++) {
         if (element[i] === i) {
@@ -147,7 +235,7 @@ const isPalindrome = (x) => {
         }
     }
     return element; 
-};
+
 
 //isPalindrome(xy)
 
