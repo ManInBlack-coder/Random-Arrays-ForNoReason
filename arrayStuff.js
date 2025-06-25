@@ -110,7 +110,7 @@ const sameValueAtSameIndex = (arr1,arr2) => {
 }
 
 
-// quicksort 
+// quicksort ˇ
 
 const quickSort = (arr) => {
     if (arr.length <= 1) {
@@ -149,4 +149,48 @@ const isPalindrome = (x) => {
     return element; 
 };
 
-isPalindrome(xy)
+//isPalindrome(xy)
+
+
+
+const nextPermutation = (nums) => {
+    const n = nums.length;
+
+    // Abifunktsioon, mis vahetab kahte elementi
+    const swap = (arr,i, j) => {
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+
+    const reverse = (arr, start, end) => {
+        while (start < end) {
+            swap(arr, start, end);
+            start++;
+            end--;
+        }
+     }
+     // 1. Leian esimese kahaneva elemendi 
+    let i = n - 2; 
+    while(i >= 0 && nums[i] >= nums[i + 1]) {
+        i--;
+    }
+
+    if (i >= 0) {
+        // 2. Leian pöördekohast suurem vähim elemendi sufiksis 
+        let j = n -1;
+        while (j >= 0 && nums[j] <= nums[i]) {
+            j--;
+        }
+        // 3. pöördekoha vahetus ja leitud element
+        swap(nums, i, j);
+    }
+    // 4. Pööran sufiksi'
+    reverse(nums, i + 1, n - 1);
+}
+
+//console.log('permutation ',nextPermutation([1,2,3])); // [1,3,2]
+
+
+let nums1 = [1, 2, 3];
+nextPermutation(nums1);
+console.log(nums1); // Väljund: [1, 3, 2]
