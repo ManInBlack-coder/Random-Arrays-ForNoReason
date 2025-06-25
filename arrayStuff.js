@@ -279,6 +279,42 @@ const nextPermutation = (nums) => {
 //console.log('permutation ',nextPermutation([1,2,3])); // [1,3,2]
 
 
-let nums1 = [1, 2, 3];
-nextPermutation(nums1);
-console.log(nums1); // Väljund: [1, 3, 2]
+//let nums1 = [1, 2, 3];
+//nextPermutation(nums1);
+//console.log(nums1); // Väljund: [1, 3, 2]
+
+
+const reerseKGroup = (head, k) => {
+    if ( !head || k === 1) {
+        return head;
+    }
+
+    const reverseFirstKNodes = (currHead, count) => {
+        let prev = null;
+        let current = currHead;
+        let nextTemp = null;
+        let originalHead = currHead;
+
+
+        for (let i = 0; i < count && current; i++) {
+            if (curr === null) {
+                return [null, originalHead];
+            }
+
+            nextTemp = current.next;
+            curr.next = prev; 
+            prev = current;
+            curr = nextTemp;
+        }
+
+        originalHead.next = curr; 
+        return [prev, crur];
+    }
+
+
+
+}
+
+//25. Reverse Nodes in k-Group
+
+//# NOT FINISHED #
