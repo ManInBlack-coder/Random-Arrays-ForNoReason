@@ -156,7 +156,7 @@ const isPalindrome = (x) => {
     }
 };
 
-console.log(isPalindrome(xy))
+//console.log(isPalindrome(xy))
 
 // Int to roman leetcode problem with hashmap usage
 const ArabToRom = (num) => {
@@ -187,7 +187,7 @@ for(const {val,sym} of romanNums) {
 return result;
 }
 
-console.log(ArabToRom(20239))
+//console.log(ArabToRom(20239))
 
 
 
@@ -210,7 +210,7 @@ const mergeLists = (lists) => {
       return merged
    }
 
-console.log(mergeLists(ArrayMap))
+//console.log(mergeLists(ArrayMap))
 
 //leetcode problem 
 //Merging more than two arrays into one sorted array from typical array of arrays
@@ -227,7 +227,7 @@ const mergeLists2 = (lists) => {
     }
    
 
-console.log(mergeLists(listers))
+//console.log(mergeLists(listers))
     let element = [];
     for (let i = 0; i < element.slice.length ; i++) {
         if (element[i] === i) {
@@ -284,37 +284,56 @@ const nextPermutation = (nums) => {
 //console.log(nums1); // Väljund: [1, 3, 2]
 
 
-const reerseKGroup = (head, k) => {
-    if ( !head || k === 1) {
-        return head;
-    }
+// const reerseKGroup = (head, k) => {
+//     if ( !head || k === 1) {
+//         return head;
+//     }
 
-    const reverseFirstKNodes = (currHead, count) => {
-        let prev = null;
-        let current = currHead;
-        let nextTemp = null;
-        let originalHead = currHead;
+//     const reverseFirstKNodes = (currHead, count) => {
+//         let prev = null;
+//         let current = currHead;
+//         let nextTemp = null;
+//         let originalHead = currHead;
 
 
-        for (let i = 0; i < count && current; i++) {
-            if (curr === null) {
-                return [null, originalHead];
-            }
+//         for (let i = 0; i < count && current; i++) {
+//             if (curr === null) {
+//                 return [null, originalHead];
+//             }
 
-            nextTemp = current.next;
-            curr.next = prev; 
-            prev = current;
-            curr = nextTemp;
+//             nextTemp = current.next;
+//             curr.next = prev; 
+//             prev = current;
+//             curr = nextTemp;
+//         }
+
+//         originalHead.next = curr; 
+//         return [prev, crur];
+//     }
+
+// }
+
+
+
+numsArr1 = [3,2,4,5]
+numsTarget1 = 5
+
+
+const twoSum = (numsArr, numsTarget) => {
+    const numMap = Map();
+
+
+    for (let i = 0; i < numsArr.length; i++) {
+        const num = numsArr[i];
+        const comp = numsTarget - 1 
+
+
+        if (numMap.has(comp)) {
+            return[numMap.get(comp), i]
         }
-
-        originalHead.next = curr; 
-        return [prev, crur];
+        numMap.set(num,i) 
     }
-
-
-
+    return []
 }
 
-//25. Reverse Nodes in k-Group
-
-//# NOT FINISHED #
+console.log('twosum', twoSum(numsArr1,numsTarget1))
