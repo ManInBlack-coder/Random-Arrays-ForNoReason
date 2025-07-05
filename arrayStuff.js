@@ -400,3 +400,18 @@ const addTwoNumbers = (l1,l2) => {
     }
     return dHead.next;
 }
+
+const findInterSec = (arr1,arr2) => {
+    const set1 = new Set(arr1);
+    const intersection = []
+
+    for (const item of arr2) {
+        if(set1.has(item)) {
+            intersection.push(item);
+            set1.delete(item);
+        }
+    }
+    return intersection
+
+};
+//console.log(findInterSec([2,2,6,-1,3,0],[1,2,5,7,9]))
