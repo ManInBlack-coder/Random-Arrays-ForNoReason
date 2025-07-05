@@ -401,6 +401,7 @@ const addTwoNumbers = (l1,l2) => {
     return dHead.next;
 }
 
+// better time comp
 const findInterSec = (arr1,arr2) => {
     const set1 = new Set(arr1);
     const intersection = []
@@ -415,3 +416,34 @@ const findInterSec = (arr1,arr2) => {
 
 };
 //console.log(findInterSec([2,2,6,-1,3,0],[1,2,5,7,9]))
+
+// control is sorted
+const sortControl = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] < arr[i -1]) {
+            return false 
+        }
+    }
+    return true
+}
+
+//console.log(sortControl([0,0,2,5,-1,2]))
+
+
+//max Sub array in o(n)
+const maxSubArr = (arr) => {
+    if (arr.length === 0 ) return 0
+    
+    
+    let currMax = 0;
+    let globMax = 0;
+    
+    for (let i = 0; i < arr.length; i++ ) {
+        currMax = Math.max(arr[i], currMax + arr[i]);
+        globMax = Math.max(arr[i], currMax)
+    }
+    
+    return globMax
+}
+
+//console.log(maxSubArr([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
