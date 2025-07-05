@@ -336,4 +336,28 @@ const twoSum = (numsArr, numsTarget) => {
     return []
 }
 
-console.log('twosum', twoSum(numsArr1,numsTarget1))
+//console.log('twosum', twoSum(numsArr1,numsTarget1))
+
+
+// probl 525
+
+const findMaxLength = (nums) => {
+    const n = nums.length
+    const first = new Int32Array(2* n +1).fill(-2)
+    const offset = n;
+    first[offset] = -1;
+
+    let diff = 0, max = 0;
+
+    for(let i = 0; i < n; i++) {
+        diff += nums[i] * 2 -1;
+        const idx = diff + offset;
+
+        if(first[idx] !== -2) {
+            max = Math.max(max, i - first[idx])
+        } else {
+            first[idx] = i
+        }
+    }
+    return max
+}
