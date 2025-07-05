@@ -447,3 +447,31 @@ const maxSubArr = (arr) => {
 }
 
 //console.log(maxSubArr([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+
+
+
+const maxSumFixedWindow = (arr,k ) => {
+    if (k > arr.length || k <= 0) {
+        return 0;
+    } 
+
+    let winSum = 0 
+    let maxSum = 0
+    let winStart = 0 
+
+    // get first winsum with k el lenght
+    for (let i = 0; i<k;i++) {
+        winSum += arr[i]
+    };
+
+    maxSum = winSum;
+
+    for (let winEnd = k; winEnd < arr.length;winEnd++) {
+        winSum += arr[winEnd];
+        winSum -= arr[winStart];
+        winStart++
+        maxSum = Math.max(maxSum, winSum)
+    }
+    return maxSum;
+}
+
