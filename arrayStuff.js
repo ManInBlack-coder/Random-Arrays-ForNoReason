@@ -475,3 +475,42 @@ const maxSumFixedWindow = (arr,k ) => {
     return maxSum;
 }
 
+
+const graph = {
+    'A': { 'B': 4, 'C': 2 },
+    'B': { 'A': 4, 'C': 5, 'D': 10 },
+    'C': { 'A': 2, 'B': 5, 'D': 3 },
+    'D': { 'B': 10, 'C': 3, 'E': 7 },
+    'E': { 'D': 7, 'F': 1 },
+    'F': { 'E': 1 }
+};
+
+
+const Dij(graph,startNode) {
+
+const distances = {};
+const previous = {};
+const unvisited = new Set(Object.keys(graph));
+
+//algsõlm kaugus 0 ja teised inf
+for (let node in graph) {
+	distances[node] = node === startNode} ? 0 : Infinity;
+
+//2 cycle
+while (unvisited.size > 0) {
+	//lühim kaugusega töötlemata node 
+	let minDistance = Infinity;
+	let closestNode = null;
+
+
+	unvisited.forEach(node => {
+	if (distances[node] < minDistance) {
+	minDistance = distance[node];
+	closestNode = node;	
+	}
+})
+	}
+}
+
+
+console.log(DiJ(graph,'A'))
